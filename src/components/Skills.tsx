@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const skills = [
   {
     title: "Frontend",
@@ -30,9 +32,13 @@ const Skills = () => {
         {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-gray-900 p-6 rounded-2xl hover:scale-105 transition duration-300 shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105"
             >
               <h3 className="text-xl font-semibold mb-4">
                 {skill.title}
@@ -43,7 +49,7 @@ const Skills = () => {
                   <li key={i}>• {item}</li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
 
