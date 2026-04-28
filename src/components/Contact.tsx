@@ -11,7 +11,7 @@ const Contact = () => {
   const handleSubmit = async (e: any) => {
   e.preventDefault();
 
-  const res = await fetch("http://localhost:8080/contact", {
+  const res = await fetch("https://portfolio-backend-olj7.onrender.com/contact", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

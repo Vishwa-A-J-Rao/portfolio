@@ -14,7 +14,7 @@ const Chatbot = () => {
 
     setMessages((prev) => [...prev, userMessage]);
 
-    const res = await fetch("http://localhost:8080/chat", {
+    const res = await fetch("https://portfolio-backend-olj7.onrender.com/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
